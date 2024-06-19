@@ -22,6 +22,6 @@ jobs:
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v4.5.0
         with:
-          token: 3ffd3518-c3c4-44ea-9b72-75012b1fd8d9
-          file: coverage/cobertura-coverage.xml
+          token: 9fb46c51-3c64-49a6-8a3f-c1cdbe6b8c9f
+          file: /coverage/cobertura-coverage.xml
           url: https://cov.patzenhoffer.eu/
