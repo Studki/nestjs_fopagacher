@@ -1,0 +1,936 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="75" failures="31" errors="0" time="22.628">
+  <testsuite name="PaymentController" errors="0" failures="0" skipped="0" timestamp="2024-06-19T09:09:08" time="1.774" tests="7">
+    <testcase classname="PaymentController should be defined" name="PaymentController should be defined" time="0.053">
+    </testcase>
+    <testcase classname="PaymentController createCustomer should create a customer" name="PaymentController createCustomer should create a customer" time="0.01">
+    </testcase>
+    <testcase classname="PaymentController createCustomer should throw an error if customer creation fails" name="PaymentController createCustomer should throw an error if customer creation fails" time="0.036">
+    </testcase>
+    <testcase classname="PaymentController createSubscription should create a payment" name="PaymentController createSubscription should create a payment" time="0.005">
+    </testcase>
+    <testcase classname="PaymentController createSubscription should throw an error if payment creation fails" name="PaymentController createSubscription should throw an error if payment creation fails" time="0.013">
+    </testcase>
+    <testcase classname="PaymentController handleWebhook should handle webhook correctly for successful payment" name="PaymentController handleWebhook should handle webhook correctly for successful payment" time="0.033">
+    </testcase>
+    <testcase classname="PaymentController handleWebhook should throw an error if webhook handling fails" name="PaymentController handleWebhook should throw an error if webhook handling fails" time="0.024">
+    </testcase>
+  </testsuite>
+  <testsuite name="TicketService" errors="0" failures="3" skipped="0" timestamp="2024-06-19T09:09:07" time="2.831" tests="6">
+    <testcase classname="TicketService getAllTicket should return an array of all the tickets" name="TicketService getAllTicket should return an array of all the tickets" time="0.024">
+    </testcase>
+    <testcase classname="TicketService getOneTicketByIdentifier should return a ticket if the identifier is anumber" name="TicketService getOneTicketByIdentifier should return a ticket if the identifier is anumber" time="0.007">
+    </testcase>
+    <testcase classname="TicketService getOneTicketByIdentifier should return a ticket if the identifier is a string" name="TicketService getOneTicketByIdentifier should return a ticket if the identifier is a string" time="0.007">
+      <failure>Error: expect(received).toBe(expected) // Object.is equality
+
+Expected: {&quot;description&quot;: &quot;test that&quot;, &quot;id&quot;: 0, &quot;status&quot;: &quot;test&quot;, &quot;title&quot;: &quot;test&quot;, &quot;type&quot;: &quot;dev&quot;, &quot;userAssigned&quot;: 0, &quot;userCreator&quot;: 12}
+Received: undefined
+    at Object.&lt;anonymous&gt; (/home/paulochon/Documents/Fopagacher/serveur/src/ticket/ticket.service.spec.ts:88:28)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)</failure>
+    </testcase>
+    <testcase classname="TicketService getOneTicketByIdentifier should throw a NotFoundException if the ticket is not found" name="TicketService getOneTicketByIdentifier should throw a NotFoundException if the ticket is not found" time="0.004">
+      <failure>Error: expect(received).rejects.toThrow()
+
+Received promise resolved instead of rejected
+Resolved to value: undefined
+    at expect (/home/paulochon/Documents/Fopagacher/serveur/node_modules/expect/build/index.js:113:15)
+    at Object.&lt;anonymous&gt; (/home/paulochon/Documents/Fopagacher/serveur/src/ticket/ticket.service.spec.ts:94:19)
+    at Promise.then.completed (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-circus/build/utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-circus/build/utils.js:231:10)
+    at _callCircusTest (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-circus/build/run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at _runTest (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-circus/build/run.js:252:3)
+    at _runTestsForDescribeBlock (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-circus/build/run.js:126:9)
+    at _runTestsForDescribeBlock (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-circus/build/run.js:121:9)
+    at _runTestsForDescribeBlock (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-circus/build/run.js:121:9)
+    at run (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-circus/build/run.js:71:3)
+    at runAndTransformResultsToJestFormat (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapterInit.js:122:21)
+    at jestAdapter (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapter.js:79:19)
+    at runTestInternal (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-runner/build/runTest.js:367:16)
+    at runTest (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-runner/build/runTest.js:444:34)
+    at Object.worker (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-runner/build/testWorker.js:106:12)</failure>
+    </testcase>
+    <testcase classname="TicketService createTicket should create a ticket" name="TicketService createTicket should create a ticket" time="0.004">
+    </testcase>
+    <testcase classname="TicketService patchTicket should update a ticket" name="TicketService patchTicket should update a ticket" time="0.003">
+      <failure>TypeError: Cannot set properties of undefined (setting &apos;title&apos;)
+    at TicketService.patchTicket (/home/paulochon/Documents/Fopagacher/serveur/src/ticket/ticket.service.ts:42:29)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at Object.&lt;anonymous&gt; (/home/paulochon/Documents/Fopagacher/serveur/src/ticket/ticket.service.spec.ts:145:28)</failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="IssueService" errors="0" failures="0" skipped="0" timestamp="2024-06-19T09:09:10" time="0.762" tests="5">
+    <testcase classname="IssueService create should throw BadRequestException when title is empty" name="IssueService create should throw BadRequestException when title is empty" time="0.025">
+    </testcase>
+    <testcase classname="IssueService create should throw BadRequestException if email is empty" name="IssueService create should throw BadRequestException if email is empty" time="0.004">
+    </testcase>
+    <testcase classname="IssueService create should throw BadRequestException if description is empty" name="IssueService create should throw BadRequestException if description is empty" time="0.014">
+    </testcase>
+    <testcase classname="IssueService create test to send image but error" name="IssueService create test to send image but error" time="0.007">
+    </testcase>
+    <testcase classname="IssueService create should upload images and return their URLs" name="IssueService create should upload images and return their URLs" time="0.012">
+    </testcase>
+  </testsuite>
+  <testsuite name="ImageController" errors="0" failures="3" skipped="0" timestamp="2024-06-19T09:09:10" time="1.354" tests="3">
+    <testcase classname="ImageController uploadImage should upload an image" name="ImageController uploadImage should upload an image" time="0.008">
+      <failure>Error: Nest can&apos;t resolve dependencies of the ImageService (?). Please make sure that the argument image_entityRepository at index [0] is available in the RootTestModule context.
+
+Potential solutions:
+- Is RootTestModule a valid NestJS module?
+- If image_entityRepository is a provider, is it part of the current RootTestModule?
+- If image_entityRepository is exported from a separate @Module, is that module imported within RootTestModule?
+  @Module({
+    imports: [ /* the Module containing image_entityRepository */ ]
+  })
+
+    at TestingInjector.lookupComponentInParentModules (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:247:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at TestingInjector.resolveComponentInstance (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:200:33)
+    at TestingInjector.resolveComponentInstance (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/testing/testing-injector.js:19:45)
+    at resolveParam (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:120:38)
+    at async Promise.all (index 0)
+    at TestingInjector.resolveConstructorParams (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:135:27)
+    at TestingInjector.loadInstance (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:61:13)
+    at TestingInjector.loadProvider (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:88:9)
+    at /home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:56:13
+    at async Promise.all (index 3)
+    at TestingInstanceLoader.createInstancesOfProviders (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:55:9)
+    at /home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:40:13
+    at async Promise.all (index 1)
+    at TestingInstanceLoader.createInstances (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:39:9)
+    at TestingInstanceLoader.createInstancesOfDependencies (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:22:13)
+    at TestingInstanceLoader.createInstancesOfDependencies (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/testing/testing-instance-loader.js:9:9)
+    at TestingModuleBuilder.createInstancesOfDependencies (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/testing/testing-module.builder.js:97:9)
+    at TestingModuleBuilder.compile (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/testing/testing-module.builder.js:63:9)
+    at Object.&lt;anonymous&gt; (/home/paulochon/Documents/Fopagacher/serveur/src/image/image.controller.spec.ts:12:39)</failure>
+    </testcase>
+    <testcase classname="ImageController getImageById should get an image by ID" name="ImageController getImageById should get an image by ID" time="0.003">
+      <failure>Error: Nest can&apos;t resolve dependencies of the ImageService (?). Please make sure that the argument image_entityRepository at index [0] is available in the RootTestModule context.
+
+Potential solutions:
+- Is RootTestModule a valid NestJS module?
+- If image_entityRepository is a provider, is it part of the current RootTestModule?
+- If image_entityRepository is exported from a separate @Module, is that module imported within RootTestModule?
+  @Module({
+    imports: [ /* the Module containing image_entityRepository */ ]
+  })
+
+    at TestingInjector.lookupComponentInParentModules (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:247:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at TestingInjector.resolveComponentInstance (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:200:33)
+    at TestingInjector.resolveComponentInstance (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/testing/testing-injector.js:19:45)
+    at resolveParam (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:120:38)
+    at async Promise.all (index 0)
+    at TestingInjector.resolveConstructorParams (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:135:27)
+    at TestingInjector.loadInstance (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:61:13)
+    at TestingInjector.loadProvider (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:88:9)
+    at /home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:56:13
+    at async Promise.all (index 3)
+    at TestingInstanceLoader.createInstancesOfProviders (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:55:9)
+    at /home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:40:13
+    at async Promise.all (index 1)
+    at TestingInstanceLoader.createInstances (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:39:9)
+    at TestingInstanceLoader.createInstancesOfDependencies (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:22:13)
+    at TestingInstanceLoader.createInstancesOfDependencies (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/testing/testing-instance-loader.js:9:9)
+    at TestingModuleBuilder.createInstancesOfDependencies (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/testing/testing-module.builder.js:97:9)
+    at TestingModuleBuilder.compile (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/testing/testing-module.builder.js:63:9)
+    at Object.&lt;anonymous&gt; (/home/paulochon/Documents/Fopagacher/serveur/src/image/image.controller.spec.ts:12:39)</failure>
+    </testcase>
+    <testcase classname="ImageController deleteImageById should delete an image by ID" name="ImageController deleteImageById should delete an image by ID" time="0.003">
+      <failure>Error: Nest can&apos;t resolve dependencies of the ImageService (?). Please make sure that the argument image_entityRepository at index [0] is available in the RootTestModule context.
+
+Potential solutions:
+- Is RootTestModule a valid NestJS module?
+- If image_entityRepository is a provider, is it part of the current RootTestModule?
+- If image_entityRepository is exported from a separate @Module, is that module imported within RootTestModule?
+  @Module({
+    imports: [ /* the Module containing image_entityRepository */ ]
+  })
+
+    at TestingInjector.lookupComponentInParentModules (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:247:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at TestingInjector.resolveComponentInstance (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:200:33)
+    at TestingInjector.resolveComponentInstance (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/testing/testing-injector.js:19:45)
+    at resolveParam (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:120:38)
+    at async Promise.all (index 0)
+    at TestingInjector.resolveConstructorParams (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:135:27)
+    at TestingInjector.loadInstance (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:61:13)
+    at TestingInjector.loadProvider (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:88:9)
+    at /home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:56:13
+    at async Promise.all (index 3)
+    at TestingInstanceLoader.createInstancesOfProviders (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:55:9)
+    at /home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:40:13
+    at async Promise.all (index 1)
+    at TestingInstanceLoader.createInstances (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:39:9)
+    at TestingInstanceLoader.createInstancesOfDependencies (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:22:13)
+    at TestingInstanceLoader.createInstancesOfDependencies (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/testing/testing-instance-loader.js:9:9)
+    at TestingModuleBuilder.createInstancesOfDependencies (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/testing/testing-module.builder.js:97:9)
+    at TestingModuleBuilder.compile (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/testing/testing-module.builder.js:63:9)
+    at Object.&lt;anonymous&gt; (/home/paulochon/Documents/Fopagacher/serveur/src/image/image.controller.spec.ts:12:39)</failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="CalendarService" errors="0" failures="4" skipped="0" timestamp="2024-06-19T09:09:08" time="3.482" tests="5">
+    <testcase classname="CalendarService findOne should return a calendar entity by id" name="CalendarService findOne should return a calendar entity by id" time="0.021">
+      <failure>Error: expect(jest.fn()).toHaveBeenCalledWith(...expected)
+
+Expected: &quot;1&quot;
+Received: {&quot;relations&quot;: [&quot;user&quot;, &quot;item_event&quot;, &quot;event&quot;], &quot;where&quot;: {&quot;id&quot;: &quot;1&quot;}}
+
+Number of calls: 1
+    at Object.&lt;anonymous&gt; (/home/paulochon/Documents/Fopagacher/serveur/src/calendar/calendar.service.spec.ts:37:40)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)</failure>
+    </testcase>
+    <testcase classname="CalendarService findAll should return an array of calendar entities" name="CalendarService findAll should return an array of calendar entities" time="0.004">
+      <failure>TypeError: Cannot read properties of undefined (reading &apos;sub&apos;)
+    at CalendarService.sub [as findAll] (/home/paulochon/Documents/Fopagacher/serveur/src/calendar/calendar.service.ts:25:37)
+    at Object.&lt;anonymous&gt; (/home/paulochon/Documents/Fopagacher/serveur/src/calendar/calendar.service.spec.ts:49:42)
+    at Promise.then.completed (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-circus/build/utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-circus/build/utils.js:231:10)
+    at _callCircusTest (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-circus/build/run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at _runTest (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-circus/build/run.js:252:3)
+    at _runTestsForDescribeBlock (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-circus/build/run.js:126:9)
+    at _runTestsForDescribeBlock (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-circus/build/run.js:121:9)
+    at _runTestsForDescribeBlock (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-circus/build/run.js:121:9)
+    at run (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-circus/build/run.js:71:3)
+    at runAndTransformResultsToJestFormat (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapterInit.js:122:21)
+    at jestAdapter (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapter.js:79:19)
+    at runTestInternal (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-runner/build/runTest.js:367:16)
+    at runTest (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-runner/build/runTest.js:444:34)
+    at Object.worker (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-runner/build/testWorker.js:106:12)</failure>
+    </testcase>
+    <testcase classname="CalendarService findByTime should return a calendar entity by time" name="CalendarService findByTime should return a calendar entity by time" time="0.005">
+      <failure>Error: expect(received).toEqual(expected) // deep equality
+
+Expected: {&quot;event&quot;: [], &quot;id&quot;: &quot;1&quot;, &quot;item_event&quot;: [], &quot;title&quot;: &quot;Test Calendar&quot;, &quot;user&quot;: {}}
+Received: undefined
+    at Object.&lt;anonymous&gt; (/home/paulochon/Documents/Fopagacher/serveur/src/calendar/calendar.service.spec.ts:64:28)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)</failure>
+    </testcase>
+    <testcase classname="CalendarService delete should delete a calendar entity by id" name="CalendarService delete should delete a calendar entity by id" time="0.004">
+    </testcase>
+    <testcase classname="CalendarService deleteEvent should delete an event by id" name="CalendarService deleteEvent should delete an event by id" time="0.004">
+      <failure>TypeError: Cannot read properties of undefined (reading &apos;findOne&apos;)
+    at Repository.findOne (/home/paulochon/Documents/Fopagacher/serveur/src/repository/Repository.ts:597:29)
+    at CalendarService.findOne [as deleteEvent] (/home/paulochon/Documents/Fopagacher/serveur/src/calendar/calendar.service.ts:64:49)
+    at Object.&lt;anonymous&gt; (/home/paulochon/Documents/Fopagacher/serveur/src/calendar/calendar.service.spec.ts:83:27)
+    at Promise.then.completed (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-circus/build/utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-circus/build/utils.js:231:10)
+    at _callCircusTest (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-circus/build/run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at _runTest (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-circus/build/run.js:252:3)
+    at _runTestsForDescribeBlock (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-circus/build/run.js:126:9)
+    at _runTestsForDescribeBlock (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-circus/build/run.js:121:9)
+    at _runTestsForDescribeBlock (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-circus/build/run.js:121:9)
+    at run (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-circus/build/run.js:71:3)
+    at runAndTransformResultsToJestFormat (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapterInit.js:122:21)
+    at jestAdapter (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapter.js:79:19)
+    at runTestInternal (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-runner/build/runTest.js:367:16)
+    at runTest (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-runner/build/runTest.js:444:34)
+    at Object.worker (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-runner/build/testWorker.js:106:12)</failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="AlimentsService" errors="0" failures="2" skipped="0" timestamp="2024-06-19T09:09:07" time="3.852" tests="6">
+    <testcase classname="AlimentsService should be defined" name="AlimentsService should be defined" time="0.017">
+    </testcase>
+    <testcase classname="AlimentsService createAliment should successfully insert a aliment" name="AlimentsService createAliment should successfully insert a aliment" time="0.005">
+    </testcase>
+    <testcase classname="AlimentsService getAllAliments should return all aliments" name="AlimentsService getAllAliments should return all aliments" time="0.004">
+      <failure>TypeError: Cannot read properties of undefined (reading &apos;findAndCount&apos;)
+    at Repository.findAndCount (/home/paulochon/Documents/Fopagacher/serveur/src/repository/Repository.ts:564:29)
+    at AlimentsService.findAndCount [as getAllAliments] (/home/paulochon/Documents/Fopagacher/serveur/src/aliment/aliment.service.ts:18:56)
+    at Object.&lt;anonymous&gt; (/home/paulochon/Documents/Fopagacher/serveur/src/aliment/aliment.service.spec.ts:87:28)
+    at Promise.then.completed (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-circus/build/utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-circus/build/utils.js:231:10)
+    at _callCircusTest (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-circus/build/run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at _runTest (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-circus/build/run.js:252:3)
+    at _runTestsForDescribeBlock (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-circus/build/run.js:126:9)
+    at _runTestsForDescribeBlock (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-circus/build/run.js:121:9)
+    at _runTestsForDescribeBlock (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-circus/build/run.js:121:9)
+    at run (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-circus/build/run.js:71:3)
+    at runAndTransformResultsToJestFormat (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapterInit.js:122:21)
+    at jestAdapter (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapter.js:79:19)
+    at runTestInternal (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-runner/build/runTest.js:367:16)
+    at runTest (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-runner/build/runTest.js:444:34)
+    at Object.worker (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-runner/build/testWorker.js:106:12)</failure>
+    </testcase>
+    <testcase classname="AlimentsService getOneAliment should return a aliment" name="AlimentsService getOneAliment should return a aliment" time="0.004">
+    </testcase>
+    <testcase classname="AlimentsService updateAliment should update a aliment" name="AlimentsService updateAliment should update a aliment" time="0.003">
+      <failure>TypeError: Cannot read properties of undefined (reading &apos;findOne&apos;)
+    at Repository.findOne (/home/paulochon/Documents/Fopagacher/serveur/src/repository/Repository.ts:597:29)
+    at AlimentsService.findOne [as updateAliment] (/home/paulochon/Documents/Fopagacher/serveur/src/aliment/aliment.service.ts:64:58)
+    at Object.&lt;anonymous&gt; (/home/paulochon/Documents/Fopagacher/serveur/src/aliment/aliment.service.spec.ts:125:28)
+    at Promise.then.completed (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-circus/build/utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-circus/build/utils.js:231:10)
+    at _callCircusTest (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-circus/build/run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at _runTest (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-circus/build/run.js:252:3)
+    at _runTestsForDescribeBlock (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-circus/build/run.js:126:9)
+    at _runTestsForDescribeBlock (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-circus/build/run.js:121:9)
+    at _runTestsForDescribeBlock (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-circus/build/run.js:121:9)
+    at run (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-circus/build/run.js:71:3)
+    at runAndTransformResultsToJestFormat (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapterInit.js:122:21)
+    at jestAdapter (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapter.js:79:19)
+    at runTestInternal (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-runner/build/runTest.js:367:16)
+    at runTest (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-runner/build/runTest.js:444:34)
+    at Object.worker (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-runner/build/testWorker.js:106:12)</failure>
+    </testcase>
+    <testcase classname="AlimentsService deleteAliment should delete a aliment" name="AlimentsService deleteAliment should delete a aliment" time="0.003">
+    </testcase>
+  </testsuite>
+  <testsuite name="PaymentService" errors="0" failures="0" skipped="0" timestamp="2024-06-19T09:09:10" time="0.955" tests="5">
+    <testcase classname="PaymentService should be defined" name="PaymentService should be defined" time="0.015">
+    </testcase>
+    <testcase classname="PaymentService createCustomer should create a customer" name="PaymentService createCustomer should create a customer" time="0.527">
+    </testcase>
+    <testcase classname="PaymentService handleWebhook should handle invoice.payment_succeeded event" name="PaymentService handleWebhook should handle invoice.payment_succeeded event" time="0.004">
+    </testcase>
+    <testcase classname="PaymentService handleWebhook should handle invoice.payment_failed event" name="PaymentService handleWebhook should handle invoice.payment_failed event" time="0.007">
+    </testcase>
+    <testcase classname="PaymentService handleWebhook should throw an error for unhandled event types" name="PaymentService handleWebhook should throw an error for unhandled event types" time="0.007">
+    </testcase>
+  </testsuite>
+  <testsuite name="MailController" errors="0" failures="6" skipped="0" timestamp="2024-06-19T09:08:59" time="11.991" tests="6">
+    <testcase classname="MailController sendEmail should send an email successfully" name="MailController sendEmail should send an email successfully" time="0.037">
+      <failure>Error: Nest can&apos;t resolve dependencies of the UsersService (user_entityRepository, tag_entityRepository, recipe_entityRepository, ustensile_entityRepository, fridge_entityRepository, token_entityRepository, diet_entityRepository, calendar_entityRepository, allergy_entityRepository, ?, JwtService). Please make sure that the argument SecureUserEntityRepository at index [9] is available in the RootTestModule context.
+
+Potential solutions:
+- Is RootTestModule a valid NestJS module?
+- If SecureUserEntityRepository is a provider, is it part of the current RootTestModule?
+- If SecureUserEntityRepository is exported from a separate @Module, is that module imported within RootTestModule?
+  @Module({
+    imports: [ /* the Module containing SecureUserEntityRepository */ ]
+  })
+
+    at TestingInjector.lookupComponentInParentModules (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:247:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at TestingInjector.resolveComponentInstance (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:200:33)
+    at TestingInjector.resolveComponentInstance (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/testing/testing-injector.js:19:45)
+    at resolveParam (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:120:38)
+    at async Promise.all (index 9)
+    at TestingInjector.resolveConstructorParams (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:135:27)
+    at TestingInjector.loadInstance (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:61:13)
+    at TestingInjector.loadProvider (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:88:9)
+    at /home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:56:13
+    at async Promise.all (index 6)
+    at TestingInstanceLoader.createInstancesOfProviders (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:55:9)
+    at /home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:40:13
+    at async Promise.all (index 1)
+    at TestingInstanceLoader.createInstances (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:39:9)
+    at TestingInstanceLoader.createInstancesOfDependencies (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:22:13)
+    at TestingInstanceLoader.createInstancesOfDependencies (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/testing/testing-instance-loader.js:9:9)
+    at TestingModuleBuilder.createInstancesOfDependencies (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/testing/testing-module.builder.js:97:9)
+    at TestingModuleBuilder.compile (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/testing/testing-module.builder.js:63:9)
+    at Object.&lt;anonymous&gt; (/home/paulochon/Documents/Fopagacher/serveur/src/mail/mail.controller.spec.ts:29:39)</failure>
+    </testcase>
+    <testcase classname="MailController sendEmail should throw BadRequestException if required parameters are missing" name="MailController sendEmail should throw BadRequestException if required parameters are missing" time="0.009">
+      <failure>Error: Nest can&apos;t resolve dependencies of the UsersService (user_entityRepository, tag_entityRepository, recipe_entityRepository, ustensile_entityRepository, fridge_entityRepository, token_entityRepository, diet_entityRepository, calendar_entityRepository, allergy_entityRepository, ?, JwtService). Please make sure that the argument SecureUserEntityRepository at index [9] is available in the RootTestModule context.
+
+Potential solutions:
+- Is RootTestModule a valid NestJS module?
+- If SecureUserEntityRepository is a provider, is it part of the current RootTestModule?
+- If SecureUserEntityRepository is exported from a separate @Module, is that module imported within RootTestModule?
+  @Module({
+    imports: [ /* the Module containing SecureUserEntityRepository */ ]
+  })
+
+    at TestingInjector.lookupComponentInParentModules (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:247:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at TestingInjector.resolveComponentInstance (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:200:33)
+    at TestingInjector.resolveComponentInstance (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/testing/testing-injector.js:19:45)
+    at resolveParam (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:120:38)
+    at async Promise.all (index 9)
+    at TestingInjector.resolveConstructorParams (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:135:27)
+    at TestingInjector.loadInstance (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:61:13)
+    at TestingInjector.loadProvider (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:88:9)
+    at /home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:56:13
+    at async Promise.all (index 6)
+    at TestingInstanceLoader.createInstancesOfProviders (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:55:9)
+    at /home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:40:13
+    at async Promise.all (index 1)
+    at TestingInstanceLoader.createInstances (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:39:9)
+    at TestingInstanceLoader.createInstancesOfDependencies (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:22:13)
+    at TestingInstanceLoader.createInstancesOfDependencies (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/testing/testing-instance-loader.js:9:9)
+    at TestingModuleBuilder.createInstancesOfDependencies (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/testing/testing-module.builder.js:97:9)
+    at TestingModuleBuilder.compile (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/testing/testing-module.builder.js:63:9)
+    at Object.&lt;anonymous&gt; (/home/paulochon/Documents/Fopagacher/serveur/src/mail/mail.controller.spec.ts:29:39)</failure>
+    </testcase>
+    <testcase classname="MailController verify should return Invalid token if token is not found" name="MailController verify should return Invalid token if token is not found" time="0.006">
+      <failure>Error: Nest can&apos;t resolve dependencies of the UsersService (user_entityRepository, tag_entityRepository, recipe_entityRepository, ustensile_entityRepository, fridge_entityRepository, token_entityRepository, diet_entityRepository, calendar_entityRepository, allergy_entityRepository, ?, JwtService). Please make sure that the argument SecureUserEntityRepository at index [9] is available in the RootTestModule context.
+
+Potential solutions:
+- Is RootTestModule a valid NestJS module?
+- If SecureUserEntityRepository is a provider, is it part of the current RootTestModule?
+- If SecureUserEntityRepository is exported from a separate @Module, is that module imported within RootTestModule?
+  @Module({
+    imports: [ /* the Module containing SecureUserEntityRepository */ ]
+  })
+
+    at TestingInjector.lookupComponentInParentModules (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:247:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at TestingInjector.resolveComponentInstance (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:200:33)
+    at TestingInjector.resolveComponentInstance (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/testing/testing-injector.js:19:45)
+    at resolveParam (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:120:38)
+    at async Promise.all (index 9)
+    at TestingInjector.resolveConstructorParams (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:135:27)
+    at TestingInjector.loadInstance (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:61:13)
+    at TestingInjector.loadProvider (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:88:9)
+    at /home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:56:13
+    at async Promise.all (index 6)
+    at TestingInstanceLoader.createInstancesOfProviders (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:55:9)
+    at /home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:40:13
+    at async Promise.all (index 1)
+    at TestingInstanceLoader.createInstances (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:39:9)
+    at TestingInstanceLoader.createInstancesOfDependencies (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:22:13)
+    at TestingInstanceLoader.createInstancesOfDependencies (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/testing/testing-instance-loader.js:9:9)
+    at TestingModuleBuilder.createInstancesOfDependencies (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/testing/testing-module.builder.js:97:9)
+    at TestingModuleBuilder.compile (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/testing/testing-module.builder.js:63:9)
+    at Object.&lt;anonymous&gt; (/home/paulochon/Documents/Fopagacher/serveur/src/mail/mail.controller.spec.ts:29:39)</failure>
+    </testcase>
+    <testcase classname="MailController verify should throw BadRequestException if required parameters are missing" name="MailController verify should throw BadRequestException if required parameters are missing" time="0.013">
+      <failure>Error: Nest can&apos;t resolve dependencies of the UsersService (user_entityRepository, tag_entityRepository, recipe_entityRepository, ustensile_entityRepository, fridge_entityRepository, token_entityRepository, diet_entityRepository, calendar_entityRepository, allergy_entityRepository, ?, JwtService). Please make sure that the argument SecureUserEntityRepository at index [9] is available in the RootTestModule context.
+
+Potential solutions:
+- Is RootTestModule a valid NestJS module?
+- If SecureUserEntityRepository is a provider, is it part of the current RootTestModule?
+- If SecureUserEntityRepository is exported from a separate @Module, is that module imported within RootTestModule?
+  @Module({
+    imports: [ /* the Module containing SecureUserEntityRepository */ ]
+  })
+
+    at TestingInjector.lookupComponentInParentModules (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:247:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at TestingInjector.resolveComponentInstance (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:200:33)
+    at TestingInjector.resolveComponentInstance (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/testing/testing-injector.js:19:45)
+    at resolveParam (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:120:38)
+    at async Promise.all (index 9)
+    at TestingInjector.resolveConstructorParams (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:135:27)
+    at TestingInjector.loadInstance (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:61:13)
+    at TestingInjector.loadProvider (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:88:9)
+    at /home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:56:13
+    at async Promise.all (index 6)
+    at TestingInstanceLoader.createInstancesOfProviders (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:55:9)
+    at /home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:40:13
+    at async Promise.all (index 1)
+    at TestingInstanceLoader.createInstances (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:39:9)
+    at TestingInstanceLoader.createInstancesOfDependencies (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:22:13)
+    at TestingInstanceLoader.createInstancesOfDependencies (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/testing/testing-instance-loader.js:9:9)
+    at TestingModuleBuilder.createInstancesOfDependencies (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/testing/testing-module.builder.js:97:9)
+    at TestingModuleBuilder.compile (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/testing/testing-module.builder.js:63:9)
+    at Object.&lt;anonymous&gt; (/home/paulochon/Documents/Fopagacher/serveur/src/mail/mail.controller.spec.ts:29:39)</failure>
+    </testcase>
+    <testcase classname="MailController sendResetPasswordEmail should send an email successfully" name="MailController sendResetPasswordEmail should send an email successfully" time="0.008">
+      <failure>Error: Nest can&apos;t resolve dependencies of the UsersService (user_entityRepository, tag_entityRepository, recipe_entityRepository, ustensile_entityRepository, fridge_entityRepository, token_entityRepository, diet_entityRepository, calendar_entityRepository, allergy_entityRepository, ?, JwtService). Please make sure that the argument SecureUserEntityRepository at index [9] is available in the RootTestModule context.
+
+Potential solutions:
+- Is RootTestModule a valid NestJS module?
+- If SecureUserEntityRepository is a provider, is it part of the current RootTestModule?
+- If SecureUserEntityRepository is exported from a separate @Module, is that module imported within RootTestModule?
+  @Module({
+    imports: [ /* the Module containing SecureUserEntityRepository */ ]
+  })
+
+    at TestingInjector.lookupComponentInParentModules (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:247:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at TestingInjector.resolveComponentInstance (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:200:33)
+    at TestingInjector.resolveComponentInstance (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/testing/testing-injector.js:19:45)
+    at resolveParam (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:120:38)
+    at async Promise.all (index 9)
+    at TestingInjector.resolveConstructorParams (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:135:27)
+    at TestingInjector.loadInstance (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:61:13)
+    at TestingInjector.loadProvider (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:88:9)
+    at /home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:56:13
+    at async Promise.all (index 6)
+    at TestingInstanceLoader.createInstancesOfProviders (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:55:9)
+    at /home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:40:13
+    at async Promise.all (index 1)
+    at TestingInstanceLoader.createInstances (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:39:9)
+    at TestingInstanceLoader.createInstancesOfDependencies (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:22:13)
+    at TestingInstanceLoader.createInstancesOfDependencies (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/testing/testing-instance-loader.js:9:9)
+    at TestingModuleBuilder.createInstancesOfDependencies (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/testing/testing-module.builder.js:97:9)
+    at TestingModuleBuilder.compile (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/testing/testing-module.builder.js:63:9)
+    at Object.&lt;anonymous&gt; (/home/paulochon/Documents/Fopagacher/serveur/src/mail/mail.controller.spec.ts:29:39)</failure>
+    </testcase>
+    <testcase classname="MailController sendVerificationEmail should send an email successfully" name="MailController sendVerificationEmail should send an email successfully" time="0.005">
+      <failure>Error: Nest can&apos;t resolve dependencies of the UsersService (user_entityRepository, tag_entityRepository, recipe_entityRepository, ustensile_entityRepository, fridge_entityRepository, token_entityRepository, diet_entityRepository, calendar_entityRepository, allergy_entityRepository, ?, JwtService). Please make sure that the argument SecureUserEntityRepository at index [9] is available in the RootTestModule context.
+
+Potential solutions:
+- Is RootTestModule a valid NestJS module?
+- If SecureUserEntityRepository is a provider, is it part of the current RootTestModule?
+- If SecureUserEntityRepository is exported from a separate @Module, is that module imported within RootTestModule?
+  @Module({
+    imports: [ /* the Module containing SecureUserEntityRepository */ ]
+  })
+
+    at TestingInjector.lookupComponentInParentModules (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:247:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at TestingInjector.resolveComponentInstance (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:200:33)
+    at TestingInjector.resolveComponentInstance (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/testing/testing-injector.js:19:45)
+    at resolveParam (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:120:38)
+    at async Promise.all (index 9)
+    at TestingInjector.resolveConstructorParams (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:135:27)
+    at TestingInjector.loadInstance (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:61:13)
+    at TestingInjector.loadProvider (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:88:9)
+    at /home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:56:13
+    at async Promise.all (index 6)
+    at TestingInstanceLoader.createInstancesOfProviders (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:55:9)
+    at /home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:40:13
+    at async Promise.all (index 1)
+    at TestingInstanceLoader.createInstances (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:39:9)
+    at TestingInstanceLoader.createInstancesOfDependencies (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:22:13)
+    at TestingInstanceLoader.createInstancesOfDependencies (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/testing/testing-instance-loader.js:9:9)
+    at TestingModuleBuilder.createInstancesOfDependencies (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/testing/testing-module.builder.js:97:9)
+    at TestingModuleBuilder.compile (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/testing/testing-module.builder.js:63:9)
+    at Object.&lt;anonymous&gt; (/home/paulochon/Documents/Fopagacher/serveur/src/mail/mail.controller.spec.ts:29:39)</failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="MailController" errors="0" failures="0" skipped="0" timestamp="2024-06-19T09:08:59" time="12.048" tests="12">
+    <testcase classname="MailController sendEmail should throw BadRequestException if required parameters are missing" name="MailController sendEmail should throw BadRequestException if required parameters are missing" time="0.049">
+    </testcase>
+    <testcase classname="MailController sendEmail should send an email" name="MailController sendEmail should send an email" time="0.008">
+    </testcase>
+    <testcase classname="MailController sendEmail should send an email" name="MailController sendEmail should send an email" time="0.005">
+    </testcase>
+    <testcase classname="MailController sendEmail should throw BadRequestException if required parameters are missing" name="MailController sendEmail should throw BadRequestException if required parameters are missing" time="0.027">
+    </testcase>
+    <testcase classname="MailController verify should return Invalid token if token is not found" name="MailController verify should return Invalid token if token is not found" time="0.01">
+    </testcase>
+    <testcase classname="MailController verify should throw BadRequestException if required parameters are missing" name="MailController verify should throw BadRequestException if required parameters are missing" time="0.005">
+    </testcase>
+    <testcase classname="MailController sendResetPasswordEmail should send an email successfully" name="MailController sendResetPasswordEmail should send an email successfully" time="0.006">
+    </testcase>
+    <testcase classname="MailController sendResetPasswordEmail should send reset password email" name="MailController sendResetPasswordEmail should send reset password email" time="0.025">
+    </testcase>
+    <testcase classname="MailController sendResetPasswordEmail should throw an error if sending email fails" name="MailController sendResetPasswordEmail should throw an error if sending email fails" time="0.016">
+    </testcase>
+    <testcase classname="MailController sendVerificationMail should send verification email" name="MailController sendVerificationMail should send verification email" time="0.011">
+    </testcase>
+    <testcase classname="MailController verifyUser should verify user" name="MailController verifyUser should verify user" time="0.004">
+    </testcase>
+    <testcase classname="MailController createToken should create a new token" name="MailController createToken should create a new token" time="0.008">
+    </testcase>
+  </testsuite>
+  <testsuite name="TicketController" errors="0" failures="1" skipped="0" timestamp="2024-06-19T09:09:07" time="4.673" tests="6">
+    <testcase classname="TicketController getAllTicket should return an array of all the tickets" name="TicketController getAllTicket should return an array of all the tickets" time="0.025">
+    </testcase>
+    <testcase classname="TicketController getOneTicketByIdentifier should return a ticket if the identifier is anumber" name="TicketController getOneTicketByIdentifier should return a ticket if the identifier is anumber" time="0.005">
+    </testcase>
+    <testcase classname="TicketController getOneTicketByIdentifier should return a ticket if the identifier is a string" name="TicketController getOneTicketByIdentifier should return a ticket if the identifier is a string" time="0.005">
+    </testcase>
+    <testcase classname="TicketController createTicket should create a ticket" name="TicketController createTicket should create a ticket" time="0.752">
+      <failure>BadRequestException: Request failed with status code 404
+    at TicketController.createTicket (/home/paulochon/Documents/Fopagacher/serveur/src/ticket/ticket.controller.ts:80:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at Object.&lt;anonymous&gt; (/home/paulochon/Documents/Fopagacher/serveur/src/ticket/ticket.controller.spec.ts:109:28)</failure>
+    </testcase>
+    <testcase classname="TicketController updateTicket should update a ticket" name="TicketController updateTicket should update a ticket" time="0.007">
+    </testcase>
+    <testcase classname="TicketController deleteTicket should delete a ticket" name="TicketController deleteTicket should delete a ticket" time="0.003">
+    </testcase>
+  </testsuite>
+  <testsuite name="issueController" errors="0" failures="0" skipped="0" timestamp="2024-06-19T09:09:11" time="0.716" tests="2">
+    <testcase classname="issueController uploadImage should upload an image" name="issueController uploadImage should upload an image" time="0.011">
+    </testcase>
+    <testcase classname="issueController should create an issue" name="issueController should create an issue" time="0.005">
+    </testcase>
+  </testsuite>
+  <testsuite name="CalendarController" errors="0" failures="3" skipped="0" timestamp="2024-06-19T09:09:11" time="0.793" tests="3">
+    <testcase classname="CalendarController getAllEvents should return all events" name="CalendarController getAllEvents should return all events" time="0.006">
+      <failure>Error: Nest can&apos;t resolve dependencies of the CalendarService (?). Please make sure that the argument calendar_entityRepository at index [0] is available in the RootTestModule context.
+
+Potential solutions:
+- Is RootTestModule a valid NestJS module?
+- If calendar_entityRepository is a provider, is it part of the current RootTestModule?
+- If calendar_entityRepository is exported from a separate @Module, is that module imported within RootTestModule?
+  @Module({
+    imports: [ /* the Module containing calendar_entityRepository */ ]
+  })
+
+    at TestingInjector.lookupComponentInParentModules (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:247:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at TestingInjector.resolveComponentInstance (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:200:33)
+    at TestingInjector.resolveComponentInstance (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/testing/testing-injector.js:19:45)
+    at resolveParam (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:120:38)
+    at async Promise.all (index 0)
+    at TestingInjector.resolveConstructorParams (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:135:27)
+    at TestingInjector.loadInstance (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:61:13)
+    at TestingInjector.loadProvider (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:88:9)
+    at /home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:56:13
+    at async Promise.all (index 3)
+    at TestingInstanceLoader.createInstancesOfProviders (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:55:9)
+    at /home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:40:13
+    at async Promise.all (index 1)
+    at TestingInstanceLoader.createInstances (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:39:9)
+    at TestingInstanceLoader.createInstancesOfDependencies (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:22:13)
+    at TestingInstanceLoader.createInstancesOfDependencies (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/testing/testing-instance-loader.js:9:9)
+    at TestingModuleBuilder.createInstancesOfDependencies (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/testing/testing-module.builder.js:97:9)
+    at TestingModuleBuilder.compile (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/testing/testing-module.builder.js:63:9)
+    at Object.&lt;anonymous&gt; (/home/paulochon/Documents/Fopagacher/serveur/src/calendar/calendar.controller.spec.ts:11:39)</failure>
+    </testcase>
+    <testcase classname="CalendarController getEventByTime should return the event with the specified time" name="CalendarController getEventByTime should return the event with the specified time" time="0.003">
+      <failure>Error: Nest can&apos;t resolve dependencies of the CalendarService (?). Please make sure that the argument calendar_entityRepository at index [0] is available in the RootTestModule context.
+
+Potential solutions:
+- Is RootTestModule a valid NestJS module?
+- If calendar_entityRepository is a provider, is it part of the current RootTestModule?
+- If calendar_entityRepository is exported from a separate @Module, is that module imported within RootTestModule?
+  @Module({
+    imports: [ /* the Module containing calendar_entityRepository */ ]
+  })
+
+    at TestingInjector.lookupComponentInParentModules (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:247:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at TestingInjector.resolveComponentInstance (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:200:33)
+    at TestingInjector.resolveComponentInstance (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/testing/testing-injector.js:19:45)
+    at resolveParam (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:120:38)
+    at async Promise.all (index 0)
+    at TestingInjector.resolveConstructorParams (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:135:27)
+    at TestingInjector.loadInstance (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:61:13)
+    at TestingInjector.loadProvider (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:88:9)
+    at /home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:56:13
+    at async Promise.all (index 3)
+    at TestingInstanceLoader.createInstancesOfProviders (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:55:9)
+    at /home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:40:13
+    at async Promise.all (index 1)
+    at TestingInstanceLoader.createInstances (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:39:9)
+    at TestingInstanceLoader.createInstancesOfDependencies (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:22:13)
+    at TestingInstanceLoader.createInstancesOfDependencies (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/testing/testing-instance-loader.js:9:9)
+    at TestingModuleBuilder.createInstancesOfDependencies (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/testing/testing-module.builder.js:97:9)
+    at TestingModuleBuilder.compile (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/testing/testing-module.builder.js:63:9)
+    at Object.&lt;anonymous&gt; (/home/paulochon/Documents/Fopagacher/serveur/src/calendar/calendar.controller.spec.ts:11:39)</failure>
+    </testcase>
+    <testcase classname="CalendarController deleteEvent should delete the event with the specified id" name="CalendarController deleteEvent should delete the event with the specified id" time="0.007">
+      <failure>Error: Nest can&apos;t resolve dependencies of the CalendarService (?). Please make sure that the argument calendar_entityRepository at index [0] is available in the RootTestModule context.
+
+Potential solutions:
+- Is RootTestModule a valid NestJS module?
+- If calendar_entityRepository is a provider, is it part of the current RootTestModule?
+- If calendar_entityRepository is exported from a separate @Module, is that module imported within RootTestModule?
+  @Module({
+    imports: [ /* the Module containing calendar_entityRepository */ ]
+  })
+
+    at TestingInjector.lookupComponentInParentModules (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:247:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at TestingInjector.resolveComponentInstance (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:200:33)
+    at TestingInjector.resolveComponentInstance (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/testing/testing-injector.js:19:45)
+    at resolveParam (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:120:38)
+    at async Promise.all (index 0)
+    at TestingInjector.resolveConstructorParams (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:135:27)
+    at TestingInjector.loadInstance (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:61:13)
+    at TestingInjector.loadProvider (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:88:9)
+    at /home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:56:13
+    at async Promise.all (index 3)
+    at TestingInstanceLoader.createInstancesOfProviders (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:55:9)
+    at /home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:40:13
+    at async Promise.all (index 1)
+    at TestingInstanceLoader.createInstances (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:39:9)
+    at TestingInstanceLoader.createInstancesOfDependencies (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:22:13)
+    at TestingInstanceLoader.createInstancesOfDependencies (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/testing/testing-instance-loader.js:9:9)
+    at TestingModuleBuilder.createInstancesOfDependencies (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/testing/testing-module.builder.js:97:9)
+    at TestingModuleBuilder.compile (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/testing/testing-module.builder.js:63:9)
+    at Object.&lt;anonymous&gt; (/home/paulochon/Documents/Fopagacher/serveur/src/calendar/calendar.controller.spec.ts:11:39)</failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="DietController" errors="0" failures="1" skipped="0" timestamp="2024-06-19T09:09:12" time="0.813" tests="1">
+    <testcase classname="DietController should be defined" name="DietController should be defined" time="0.009">
+      <failure>Error: Nest can&apos;t resolve dependencies of the DietService (?). Please make sure that the argument diet_entityRepository at index [0] is available in the RootTestModule context.
+
+Potential solutions:
+- Is RootTestModule a valid NestJS module?
+- If diet_entityRepository is a provider, is it part of the current RootTestModule?
+- If diet_entityRepository is exported from a separate @Module, is that module imported within RootTestModule?
+  @Module({
+    imports: [ /* the Module containing diet_entityRepository */ ]
+  })
+
+    at TestingInjector.lookupComponentInParentModules (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:247:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at TestingInjector.resolveComponentInstance (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:200:33)
+    at TestingInjector.resolveComponentInstance (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/testing/testing-injector.js:19:45)
+    at resolveParam (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:120:38)
+    at async Promise.all (index 0)
+    at TestingInjector.resolveConstructorParams (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:135:27)
+    at TestingInjector.loadInstance (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:61:13)
+    at TestingInjector.loadProvider (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:88:9)
+    at /home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:56:13
+    at async Promise.all (index 3)
+    at TestingInstanceLoader.createInstancesOfProviders (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:55:9)
+    at /home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:40:13
+    at async Promise.all (index 1)
+    at TestingInstanceLoader.createInstances (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:39:9)
+    at TestingInstanceLoader.createInstancesOfDependencies (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:22:13)
+    at TestingInstanceLoader.createInstancesOfDependencies (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/testing/testing-instance-loader.js:9:9)
+    at TestingModuleBuilder.createInstancesOfDependencies (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/testing/testing-module.builder.js:97:9)
+    at TestingModuleBuilder.compile (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/testing/testing-module.builder.js:63:9)
+    at Object.&lt;anonymous&gt; (/home/paulochon/Documents/Fopagacher/serveur/src/diet/diet.controller.spec.ts:9:35)</failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="RecipeService" errors="0" failures="1" skipped="0" timestamp="2024-06-19T09:09:12" time="0.889" tests="1">
+    <testcase classname="RecipeService should be defined" name="RecipeService should be defined" time="0.011">
+      <failure>Error: Nest can&apos;t resolve dependencies of the RecipeService (?, aliment_entityRepository, fridge_entityRepository, user_entityRepository, item_entityRepository, ustensile_entityRepository, recipeStep_entityRepository). Please make sure that the argument recipe_entityRepository at index [0] is available in the RootTestModule context.
+
+Potential solutions:
+- Is RootTestModule a valid NestJS module?
+- If recipe_entityRepository is a provider, is it part of the current RootTestModule?
+- If recipe_entityRepository is exported from a separate @Module, is that module imported within RootTestModule?
+  @Module({
+    imports: [ /* the Module containing recipe_entityRepository */ ]
+  })
+
+    at TestingInjector.lookupComponentInParentModules (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:247:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at TestingInjector.resolveComponentInstance (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:200:33)
+    at TestingInjector.resolveComponentInstance (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/testing/testing-injector.js:19:45)
+    at resolveParam (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:120:38)
+    at async Promise.all (index 0)
+    at TestingInjector.resolveConstructorParams (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:135:27)
+    at TestingInjector.loadInstance (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:61:13)
+    at TestingInjector.loadProvider (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:88:9)
+    at /home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:56:13
+    at async Promise.all (index 3)
+    at TestingInstanceLoader.createInstancesOfProviders (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:55:9)
+    at /home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:40:13
+    at async Promise.all (index 1)
+    at TestingInstanceLoader.createInstances (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:39:9)
+    at TestingInstanceLoader.createInstancesOfDependencies (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:22:13)
+    at TestingInstanceLoader.createInstancesOfDependencies (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/testing/testing-instance-loader.js:9:9)
+    at TestingModuleBuilder.createInstancesOfDependencies (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/testing/testing-module.builder.js:97:9)
+    at TestingModuleBuilder.compile (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/testing/testing-module.builder.js:63:9)
+    at Object.&lt;anonymous&gt; (/home/paulochon/Documents/Fopagacher/serveur/src/recipe/recipe.service.spec.ts:9:35)</failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="AllergyController" errors="0" failures="1" skipped="0" timestamp="2024-06-19T09:09:12" time="0.908" tests="1">
+    <testcase classname="AllergyController should be defined" name="AllergyController should be defined" time="0.009">
+      <failure>Error: Nest can&apos;t resolve dependencies of the AllergyController (?). Please make sure that the argument AllergyService at index [0] is available in the RootTestModule context.
+
+Potential solutions:
+- Is RootTestModule a valid NestJS module?
+- If AllergyService is a provider, is it part of the current RootTestModule?
+- If AllergyService is exported from a separate @Module, is that module imported within RootTestModule?
+  @Module({
+    imports: [ /* the Module containing AllergyService */ ]
+  })
+
+    at TestingInjector.lookupComponentInParentModules (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:247:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at TestingInjector.resolveComponentInstance (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:200:33)
+    at TestingInjector.resolveComponentInstance (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/testing/testing-injector.js:19:45)
+    at resolveParam (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:120:38)
+    at async Promise.all (index 0)
+    at TestingInjector.resolveConstructorParams (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:135:27)
+    at TestingInjector.loadInstance (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:61:13)
+    at TestingInjector.loadController (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:79:9)
+    at /home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:68:13
+    at async Promise.all (index 0)
+    at TestingInstanceLoader.createInstancesOfControllers (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:67:9)
+    at /home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:42:13
+    at async Promise.all (index 1)
+    at TestingInstanceLoader.createInstances (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:39:9)
+    at TestingInstanceLoader.createInstancesOfDependencies (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:22:13)
+    at TestingInstanceLoader.createInstancesOfDependencies (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/testing/testing-instance-loader.js:9:9)
+    at TestingModuleBuilder.createInstancesOfDependencies (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/testing/testing-module.builder.js:97:9)
+    at TestingModuleBuilder.compile (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/testing/testing-module.builder.js:63:9)
+    at Object.&lt;anonymous&gt; (/home/paulochon/Documents/Fopagacher/serveur/src/allergy/allergy.controller.spec.ts:8:35)</failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="AllergyService" errors="0" failures="1" skipped="0" timestamp="2024-06-19T09:09:12" time="0.679" tests="1">
+    <testcase classname="AllergyService should be defined" name="AllergyService should be defined" time="0.013">
+      <failure>Error: Nest can&apos;t resolve dependencies of the AllergyService (?). Please make sure that the argument allergy_entityRepository at index [0] is available in the RootTestModule context.
+
+Potential solutions:
+- Is RootTestModule a valid NestJS module?
+- If allergy_entityRepository is a provider, is it part of the current RootTestModule?
+- If allergy_entityRepository is exported from a separate @Module, is that module imported within RootTestModule?
+  @Module({
+    imports: [ /* the Module containing allergy_entityRepository */ ]
+  })
+
+    at TestingInjector.lookupComponentInParentModules (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:247:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at TestingInjector.resolveComponentInstance (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:200:33)
+    at TestingInjector.resolveComponentInstance (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/testing/testing-injector.js:19:45)
+    at resolveParam (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:120:38)
+    at async Promise.all (index 0)
+    at TestingInjector.resolveConstructorParams (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:135:27)
+    at TestingInjector.loadInstance (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:61:13)
+    at TestingInjector.loadProvider (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:88:9)
+    at /home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:56:13
+    at async Promise.all (index 3)
+    at TestingInstanceLoader.createInstancesOfProviders (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:55:9)
+    at /home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:40:13
+    at async Promise.all (index 1)
+    at TestingInstanceLoader.createInstances (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:39:9)
+    at TestingInstanceLoader.createInstancesOfDependencies (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:22:13)
+    at TestingInstanceLoader.createInstancesOfDependencies (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/testing/testing-instance-loader.js:9:9)
+    at TestingModuleBuilder.createInstancesOfDependencies (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/testing/testing-module.builder.js:97:9)
+    at TestingModuleBuilder.compile (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/testing/testing-module.builder.js:63:9)
+    at Object.&lt;anonymous&gt; (/home/paulochon/Documents/Fopagacher/serveur/src/allergy/allergy.service.spec.ts:8:35)</failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="QuizzController" errors="0" failures="1" skipped="0" timestamp="2024-06-19T09:09:12" time="0.858" tests="1">
+    <testcase classname="QuizzController should be defined" name="QuizzController should be defined" time="0.006">
+      <failure>Error: Nest can&apos;t resolve dependencies of the QuizzController (?). Please make sure that the argument QuizzService at index [0] is available in the RootTestModule context.
+
+Potential solutions:
+- Is RootTestModule a valid NestJS module?
+- If QuizzService is a provider, is it part of the current RootTestModule?
+- If QuizzService is exported from a separate @Module, is that module imported within RootTestModule?
+  @Module({
+    imports: [ /* the Module containing QuizzService */ ]
+  })
+
+    at TestingInjector.lookupComponentInParentModules (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:247:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at TestingInjector.resolveComponentInstance (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:200:33)
+    at TestingInjector.resolveComponentInstance (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/testing/testing-injector.js:19:45)
+    at resolveParam (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:120:38)
+    at async Promise.all (index 0)
+    at TestingInjector.resolveConstructorParams (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:135:27)
+    at TestingInjector.loadInstance (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:61:13)
+    at TestingInjector.loadController (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:79:9)
+    at /home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:68:13
+    at async Promise.all (index 0)
+    at TestingInstanceLoader.createInstancesOfControllers (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:67:9)
+    at /home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:42:13
+    at async Promise.all (index 1)
+    at TestingInstanceLoader.createInstances (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:39:9)
+    at TestingInstanceLoader.createInstancesOfDependencies (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:22:13)
+    at TestingInstanceLoader.createInstancesOfDependencies (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/testing/testing-instance-loader.js:9:9)
+    at TestingModuleBuilder.createInstancesOfDependencies (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/testing/testing-module.builder.js:97:9)
+    at TestingModuleBuilder.compile (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/testing/testing-module.builder.js:63:9)
+    at Object.&lt;anonymous&gt; (/home/paulochon/Documents/Fopagacher/serveur/src/quizz/quizz.controller.spec.ts:8:35)</failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="QuizzService" errors="0" failures="1" skipped="0" timestamp="2024-06-19T09:09:12" time="0.552" tests="1">
+    <testcase classname="QuizzService should be defined" name="QuizzService should be defined" time="0.026">
+      <failure>Error: Nest can&apos;t resolve dependencies of the QuizzService (?). Please make sure that the argument quizz_entityRepository at index [0] is available in the RootTestModule context.
+
+Potential solutions:
+- Is RootTestModule a valid NestJS module?
+- If quizz_entityRepository is a provider, is it part of the current RootTestModule?
+- If quizz_entityRepository is exported from a separate @Module, is that module imported within RootTestModule?
+  @Module({
+    imports: [ /* the Module containing quizz_entityRepository */ ]
+  })
+
+    at TestingInjector.lookupComponentInParentModules (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:247:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at TestingInjector.resolveComponentInstance (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:200:33)
+    at TestingInjector.resolveComponentInstance (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/testing/testing-injector.js:19:45)
+    at resolveParam (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:120:38)
+    at async Promise.all (index 0)
+    at TestingInjector.resolveConstructorParams (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:135:27)
+    at TestingInjector.loadInstance (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:61:13)
+    at TestingInjector.loadProvider (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:88:9)
+    at /home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:56:13
+    at async Promise.all (index 3)
+    at TestingInstanceLoader.createInstancesOfProviders (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:55:9)
+    at /home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:40:13
+    at async Promise.all (index 1)
+    at TestingInstanceLoader.createInstances (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:39:9)
+    at TestingInstanceLoader.createInstancesOfDependencies (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:22:13)
+    at TestingInstanceLoader.createInstancesOfDependencies (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/testing/testing-instance-loader.js:9:9)
+    at TestingModuleBuilder.createInstancesOfDependencies (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/testing/testing-module.builder.js:97:9)
+    at TestingModuleBuilder.compile (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/testing/testing-module.builder.js:63:9)
+    at Object.&lt;anonymous&gt; (/home/paulochon/Documents/Fopagacher/serveur/src/quizz/quizz.service.spec.ts:8:35)</failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="DietService" errors="0" failures="1" skipped="0" timestamp="2024-06-19T09:09:13" time="0.46" tests="1">
+    <testcase classname="DietService should be defined" name="DietService should be defined" time="0.004">
+      <failure>Error: Nest can&apos;t resolve dependencies of the DietService (?). Please make sure that the argument diet_entityRepository at index [0] is available in the RootTestModule context.
+
+Potential solutions:
+- Is RootTestModule a valid NestJS module?
+- If diet_entityRepository is a provider, is it part of the current RootTestModule?
+- If diet_entityRepository is exported from a separate @Module, is that module imported within RootTestModule?
+  @Module({
+    imports: [ /* the Module containing diet_entityRepository */ ]
+  })
+
+    at TestingInjector.lookupComponentInParentModules (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:247:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at TestingInjector.resolveComponentInstance (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:200:33)
+    at TestingInjector.resolveComponentInstance (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/testing/testing-injector.js:19:45)
+    at resolveParam (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:120:38)
+    at async Promise.all (index 0)
+    at TestingInjector.resolveConstructorParams (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:135:27)
+    at TestingInjector.loadInstance (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:61:13)
+    at TestingInjector.loadProvider (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:88:9)
+    at /home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:56:13
+    at async Promise.all (index 3)
+    at TestingInstanceLoader.createInstancesOfProviders (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:55:9)
+    at /home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:40:13
+    at async Promise.all (index 1)
+    at TestingInstanceLoader.createInstances (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:39:9)
+    at TestingInstanceLoader.createInstancesOfDependencies (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:22:13)
+    at TestingInstanceLoader.createInstancesOfDependencies (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/testing/testing-instance-loader.js:9:9)
+    at TestingModuleBuilder.createInstancesOfDependencies (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/testing/testing-module.builder.js:97:9)
+    at TestingModuleBuilder.compile (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/testing/testing-module.builder.js:63:9)
+    at Object.&lt;anonymous&gt; (/home/paulochon/Documents/Fopagacher/serveur/src/diet/diet.service.spec.ts:8:35)</failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="AppModule" errors="0" failures="1" skipped="0" timestamp="2024-06-19T09:09:11" time="4.791" tests="1">
+    <testcase classname="AppModule should be defined" name="AppModule should be defined" time="0.029">
+      <failure>Error: Nest can&apos;t resolve dependencies of the TypeOrmModuleOptions (?). Please make sure that the argument ConfigService at index [0] is available in the TypeOrmCoreModule context.
+
+Potential solutions:
+- Is TypeOrmCoreModule a valid NestJS module?
+- If ConfigService is a provider, is it part of the current TypeOrmCoreModule?
+- If ConfigService is exported from a separate @Module, is that module imported within TypeOrmCoreModule?
+  @Module({
+    imports: [ /* the Module containing ConfigService */ ]
+  })
+
+    at TestingInjector.lookupComponentInParentModules (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:247:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at TestingInjector.resolveComponentInstance (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:200:33)
+    at TestingInjector.resolveComponentInstance (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/testing/testing-injector.js:19:45)
+    at resolveParam (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:120:38)
+    at async Promise.all (index 0)
+    at TestingInjector.resolveConstructorParams (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:135:27)
+    at TestingInjector.loadInstance (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:61:13)
+    at TestingInjector.loadProvider (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/injector.js:88:9)
+    at /home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:56:13
+    at async Promise.all (index 3)
+    at TestingInstanceLoader.createInstancesOfProviders (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:55:9)
+    at /home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:40:13
+    at async Promise.all (index 14)
+    at TestingInstanceLoader.createInstances (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:39:9)
+    at TestingInstanceLoader.createInstancesOfDependencies (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/core/injector/instance-loader.js:22:13)
+    at TestingInstanceLoader.createInstancesOfDependencies (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/testing/testing-instance-loader.js:9:9)
+    at TestingModuleBuilder.createInstancesOfDependencies (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/testing/testing-module.builder.js:97:9)
+    at TestingModuleBuilder.compile (/home/paulochon/Documents/Fopagacher/serveur/node_modules/@nestjs/testing/testing-module.builder.js:63:9)
+    at Object.&lt;anonymous&gt; (/home/paulochon/Documents/Fopagacher/serveur/src/App/app.module.spec.ts:10:23)</failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Main" errors="0" failures="1" skipped="0" timestamp="2024-06-19T09:09:11" time="9.65" tests="1">
+    <testcase classname="Main should start the application" name="Main should start the application" time="0">
+      <failure>Error: thrown: &quot;Exceeded timeout of 5000 ms for a hook.
+Add a timeout value to this test to increase the timeout, if this is a long-running test. See https://jestjs.io/docs/api#testname-fn-timeout.&quot;
+    at /home/paulochon/Documents/Fopagacher/serveur/src/main.spec.ts:8:3
+    at _dispatchDescribe (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-circus/build/index.js:91:26)
+    at describe (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-circus/build/index.js:55:5)
+    at Object.&lt;anonymous&gt; (/home/paulochon/Documents/Fopagacher/serveur/src/main.spec.ts:5:1)
+    at Runtime._execModule (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-runtime/build/index.js:1439:24)
+    at Runtime._loadModule (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-runtime/build/index.js:1022:12)
+    at Runtime.requireModule (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-runtime/build/index.js:882:12)
+    at jestAdapter (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapter.js:77:13)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at runTestInternal (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-runner/build/runTest.js:367:16)
+    at runTest (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-runner/build/runTest.js:444:34)
+    at Object.worker (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-runner/build/testWorker.js:106:12)</failure>
+    </testcase>
+    <testcase classname=" Test execution failure: could be caused by test hooks like &apos;afterAll&apos;." name=" Test execution failure: could be caused by test hooks like &apos;afterAll&apos;." time="0">
+      <failure>{&quot;message&quot;:&quot;&quot;,&quot;stack&quot;:&quot;TypeError: Cannot read properties of undefined (reading &apos;close&apos;)\n    at Object.&lt;anonymous&gt; (/home/paulochon/Documents/Fopagacher/serveur/src/main.spec.ts:22:15)\n    at Promise.then.completed (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-circus/build/utils.js:298:28)\n    at new Promise (&lt;anonymous&gt;)\n    at callAsyncCircusFn (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-circus/build/utils.js:231:10)\n    at _callCircusHook (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-circus/build/run.js:281:40)\n    at _runTestsForDescribeBlock (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-circus/build/run.js:154:7)\n    at _runTestsForDescribeBlock (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-circus/build/run.js:121:9)\n    at run (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-circus/build/run.js:71:3)\n    at runAndTransformResultsToJestFormat (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapterInit.js:122:21)\n    at jestAdapter (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapter.js:79:19)\n    at runTestInternal (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-runner/build/runTest.js:367:16)\n    at runTest (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-runner/build/runTest.js:444:34)\n    at Object.worker (/home/paulochon/Documents/Fopagacher/serveur/node_modules/jest-runner/build/testWorker.js:106:12)&quot;}</failure>
+    </testcase>
+  </testsuite>
+</testsuites>

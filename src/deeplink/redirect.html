@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>${title}</title>
+    <meta name="title" content=${title} />
+    <meta name="description" content=${description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content=${url} />
+    <meta property="og:title" content=${title} />
+    <meta property="og:description" content=${description} />
+    <meta property="og:image" content=${image} />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content=${title} />
+    <meta property="twitter:description" content=${description} />
+    <script type="text/javascript">
+      window.onload = function () {
+        window.location.href = "app.fopagacher://${path}";
+      };
+    </script>
+  </head>
+  <body>
+    <header><img class="headerimage" src="fopagacher-logo.svg" /></header>
+    <div>
+      <h2 class="title">Votre lien de partage</h2>
+      <img class="sharedimage" src=${image} />
+      <h3>Titre de la recette/frigo/list</h3>
+      <h4>${description}</h4>
+      <h5>
+        Si vous n'êtes pas redirigé automatiquement,
+        <a href="app.fopagacher://${path}">cliquez ici</a>
+      </h5>
+    </div>
+    <div>
+      <h4>
+        Si vous n'avez pas l'application, vous pouvez la télécharger sur l'App
+        Store ou le Google Play Store
+      </h4>
+      <div class="rowcontainer">
+        <a class="storelinkgoogle" href="https://play.google.com/store/games/">
+          <img class="storeimage" src="https://api.patzenhoffer.eu/images/googleplaylogo" alt="Fopagacher" />
+        </a>
+        <a class="storelinkapple" href="https://www.apple.com/app-store/">
+          <img class="storeimage" src="https://api.patzenhoffer.eu/images/applelogo" alt="Fopagacher" />
+        </a>
+      </div>
+    </div>
+  </body>
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      min-height: 100vh;
+      align-items: center;
+      padding: 0 0 20px 0;
+      flex-direction: column;
+      background-color: whitesmoke;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+        sans-serif;
+    }
+    header {
+      width: 100%;
+      height: 10vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(to bottom, #90e9c5, #84ddb9);
+    }
+    img.headerimage {
+      width: 100%;
+      height: 80%;
+      object-fit: contain;
+    }
+    div {
+      width: 90%;
+      display: flex;
+      padding: 20px;
+      margin-top: 20px;
+      border-radius: 10px;
+      align-items: center;
+      flex-direction: column;
+      background-color: white;
+    }
+    h2 {
+      font-size: 2rem;
+      font-weight: 800;
+    }
+    img.sharedimage {
+      width: auto;
+      border-radius: 10px;
+    }
+    h5 {
+      margin-top: 10px;
+      font-weight: 600;
+      font-style: italic;
+    }
+    div.rowcontainer {
+      width: 100%;
+      height: 10px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+    }
+    a.storelinkapple {
+      width: 40%;
+      height: 55px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    a.storelinkgoogle {
+      width: 40%;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    img.storeimage {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  </style>
+</html>

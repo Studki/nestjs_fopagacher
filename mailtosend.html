@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+      }
+      .email-container {
+        max-width: 600px;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #e0e0e0;
+      }
+
+      .header {
+        height: 25%;
+        padding: 10px 0;
+      }
+
+      .header,
+      .footer {
+        text-align: center;
+      }
+      .header img {
+        width: 150px;
+      }
+      .contact-info {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+      }
+      .contact-info div {
+        flex: 1;
+        text-align: center;
+      }
+      .contact-info div span {
+        display: inline-block;
+        transition: transform 0.3s ease;
+      }
+      .contact-info div:hover span {
+        animation: hop 0.5s ease-in-out forwards;
+        animation-delay: calc(var(--char-index) * 0.1s);
+      }
+      @keyframes hop {
+        0% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+        100% {
+          transform: translateY(0);
+        }
+      }
+
+      .content {
+        padding: 20px;
+        text-align: center;
+      }
+      .content h1 {
+        color: #333333;
+      }
+      .content p {
+        color: #666666;
+      }
+      .footer-1 {
+        border-left: 5px solid #48cfae;
+        border-top-left-radius: 20px;
+        border-top: 5px solid #48cfae;
+      }
+      .footer-2 {
+        border-right: 5px solid #48cfae;
+        border-bottom-right-radius: 20px;
+        border-bottom: 5px solid #48cfae;
+      }
+
+      .fopalogo {
+        height: 100px;
+        width: 100px;
+        background: url('./src/seed/images/fopagacher-logo.svg');
+        margin: auto;
+        border-radius: 50%;
+        box-sizing: border-box;
+        box-shadow: 7px 7px 10px #cbced1, -7px -7px 10px white;
+        transition: transform 0.5s ease-in-out;
+      }
+
+      .fopalogo:hover {
+        transform: rotate(360deg);
+      }
+
+      .buttonswag {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        margin-top: 20px;
+        background: #48cfae;
+        height: 50px;
+        line-height: 100px;
+        padding: 0 20px;
+        border-radius: 20px;
+        cursor: pointer;
+        font-weight: 900;
+        box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
+        transition: 0.5s;
+        text-align: center;
+      }
+      .buttonswag:hover {
+        background-color: #3db594;
+        box-shadow: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="email-container">
+      <div class="top-container">
+        <div class="header">
+          <div class="fopalogo"></div>
+        </div>
+        <div class="contact-info">
+          <div>
+            <p>📞 <span class="contact-text">+33615254585</span></p>
+          </div>
+          <div>
+            <p>✉️ <span class="contact-text">robin@fopagacher.com</span></p>
+          </div>
+          <div>
+            <p>
+              🌐
+              <a
+                href="https://fopagacher.com/faq"
+                target="_blank"
+                class="contact-text"
+                >fopagacher.com/faq</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="content">
+        <h1>Merci d'utiliser le service Compte fopagacher</h1>
+        <p>
+          Suivez le lien ou cliquez sur le bouton ci-dessous pour poursuivre le
+          processus de changement de mot de passe.
+        </p>
+        <a href="patzenhoffer.eu" class="buttonswag">Reset</a>
+      </div>
+      <div class="footer">
+        <div class="footer-1">
+          <p>
+            Veuillez ne pas répondre à cet e-mail. Si vous souhaitez nous
+            contacter, consultez les informations ci-dessous.
+          </p>
+        </div>
+        <div class="footer-2">
+          <p>
+            🌐
+            <a href="https://fopagacher.com/faq" target="_blank"
+              >fopagacher.com/faq</a
+            >
+            | ✉️ mailhelp@fopagacher.com
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.querySelectorAll('.contact-text').forEach((el) => {
+        el.innerHTML = el.textContent
+          .split('')
+          .map(
+            (char, index) =>
+              `<span style="--char-index:${index};">${char}</span>`,
+          )
+          .join('');
+      });
+    </script>
+  </body>
+</html>

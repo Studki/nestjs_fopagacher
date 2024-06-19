@@ -1,0 +1,14 @@
+./node_modules
+./test
+**/*.test.*
+.gitignore
+.gitlab-ci.yml
+LICENSE
+CHANGELOG.md
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
