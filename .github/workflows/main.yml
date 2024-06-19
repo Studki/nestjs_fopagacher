@@ -24,4 +24,4 @@ jobs:
         with:
           token: 9fb46c51-3c64-49a6-8a3f-c1cdbe6b8c9f
           file: cobertura-coverage.xml
-          url: https://4.233.60.144/
+          url: https://cov.patzenhoffer.eu
