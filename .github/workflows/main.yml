@@ -1,0 +1,25 @@
+name: Build CodeCov
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  repository_dispatch:
+  schedule:
+    - cron: '0 0 12 12 0'
+  workflow_dispatch:
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest 
+    steps:
+  # Allows you to run this workflow manually from the Actions tab
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v4.0.1
+        with:
+          token: 3ffd3518-c3c4-44ea-9b72-75012b1fd8d9
