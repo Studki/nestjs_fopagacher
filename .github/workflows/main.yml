@@ -20,6 +20,7 @@ jobs:
     steps:
   # Allows you to run this workflow manually from the Actions tab
       - name: Upload coverage reports to Codecov
-        uses: codecov/codecov-action@v4.0.1
+        uses: codecov/codecov-action@v4.5.0
         with:
           token: 3ffd3518-c3c4-44ea-9b72-75012b1fd8d9
+          file: coverage/cobertura-coverage.xml
