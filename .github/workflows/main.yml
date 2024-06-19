@@ -23,5 +23,5 @@ jobs:
         uses: codecov/codecov-action@v4.5.0
         with:
           token: 9fb46c51-3c64-49a6-8a3f-c1cdbe6b8c9f
-          file: /coverage/cobertura-coverage.xml
+          file: cobertura-coverage.xml
           url: https://cov.patzenhoffer.eu/
