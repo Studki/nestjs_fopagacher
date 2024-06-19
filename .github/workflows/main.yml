@@ -18,6 +18,16 @@ jobs:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest 
     steps:
+      - name: List files for debugging
+        run: ls -R  # List all files recursively for debugging purposes
+
+      - name: Check if coverage file exists
+        run: |
+          if [ ! -f coverage/cobertura-coverage.xml ]; then
+            echo "Coverage file not found!"
+            exit 1
+          fi
+          echo "Coverage file found."
   # Allows you to run this workflow manually from the Actions tab
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v4.5.0
